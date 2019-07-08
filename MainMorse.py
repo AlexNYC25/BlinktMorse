@@ -7,7 +7,7 @@ class MainMorse:
 
     def __init__(self):
         self.alphabet = MorseAlphabet()
-        ##self.lib = MorseLibrary()
+        self.lib = MorseLibrary()
         #self.finalMorse = ""
 
     # need to add the actual blinkit commands
@@ -15,13 +15,22 @@ class MainMorse:
     def blinkitMorse(self,morseString):
         for x in range(len(morseString)):
             if (morseString[x] == "."):
-                print("dot")
+                try:
+                    self.lib.dot()
+                except:    
+                    print("dot")
                 # 
             elif (morseString[x] == "-"):
-                print("dash")
+                try:
+                    self.lib.dot()
+                except: 
+                    print("dash")
                 #
             else:
-                print("space")
+                try:
+                    self.lib.space()
+                except:
+                    print("space")
                 #
 
 
