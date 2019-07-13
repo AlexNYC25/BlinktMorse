@@ -1,6 +1,6 @@
 
 from MorseAlphabet import * 
-##from MorseLibrary import *
+from MorseLibrary import *
 
 class MainMorse:
 
@@ -39,4 +39,5 @@ class MainMorse:
         for x in range(len(word)):
             finalMorse = finalMorse + self.alphabet.letterToMorse(word[x]) + " "
     
+        self.blinkitMorse(finalMorse)
         print(finalMorse)

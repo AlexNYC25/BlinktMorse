@@ -1,16 +1,26 @@
-import blinkt
+try:
+    import blinkt
+except:
+    print("Not running on rasberry pi")
+
 import time
 
 class MorseLibrary:
 
     def __init__(self):
-        blinkt.set_clear_on_exit()
+        try:
+            blinkt.set_clear_on_exit()
+        except:
+            print("Clearing pixels")    
 
     def allPixels(self, onState):
-        for i in range(blinkt.NUM_PIXELS):
-            rgbValue = onState * 255
-            blinkt.set_pixel(i, rgbValue, rgbValue, rgbValue)
-        blinkt.show()
+        try:
+            for i in range(blinkt.NUM_PIXELS):
+                rgbValue = onState * 255
+                blinkt.set_pixel(i, rgbValue, rgbValue, rgbValue)
+            blinkt.show()
+        except:
+            print("Unable to show on pixels")
 
 
     def dot(self):
