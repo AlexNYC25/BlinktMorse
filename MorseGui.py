@@ -1,15 +1,15 @@
 # create the main layout for the GUi in this file
 
 import tkinter as tk
-from MorseAlphabet import *
 from MainMorse import *
 
 def printContents():
-    MorseTest.conversion(stringEntryField.get())
+    MorseEngine.conversion(stringEntryField.get())
     stringEntryField.delete(0, "end")
 
-MorseTest = MainMorse()
+MorseEngine = MainMorse()
 
+# TODO Fix the layout of the GUI
 mainWindow = tk.Tk()
 mainWindow.title("Blinkit Morse Tool")
 

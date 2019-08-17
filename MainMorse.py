@@ -10,6 +10,14 @@ class MainMorse:
         self.lib = MorseLibrary()
         #self.finalMorse = ""
 
+    def conversion(self, word):
+        finalMorse = ""
+        for x in range(len(word)):
+            finalMorse = finalMorse + self.alphabet.letterToMorse(word[x]) + " "
+    
+        self.blinkitMorse(finalMorse)
+        print(finalMorse)
+        
     # need to add the actual blinkit commands
     # and replace the print statements
     def blinkitMorse(self,morseString):
@@ -19,25 +27,16 @@ class MainMorse:
                     self.lib.dot()
                 except:    
                     print("dot")
-                # 
             elif (morseString[x] == "-"):
                 try:
                     self.lib.dot()
                 except: 
                     print("dash")
-                #
             else:
                 try:
                     self.lib.space()
                 except:
                     print("space")
-                #
 
 
-    def conversion(self, word):
-        finalMorse = ""
-        for x in range(len(word)):
-            finalMorse = finalMorse + self.alphabet.letterToMorse(word[x]) + " "
-    
-        self.blinkitMorse(finalMorse)
-        print(finalMorse)
+
