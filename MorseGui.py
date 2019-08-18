@@ -1,13 +1,13 @@
 # create the main layout for the GUi in this file
 
 import tkinter as tk
-from MainMorse import *
+from BlinktMorseLib import *
 
 def printContents():
-    MorseEngine.conversion(stringEntryField.get())
+    MorseEngine.wordConversion(stringEntryField.get())
     stringEntryField.delete(0, "end")
 
-MorseEngine = MainMorse()
+MorseEngine = BlinktMorseLib()
 
 # TODO Fix the layout of the GUI
 mainWindow = tk.Tk()
